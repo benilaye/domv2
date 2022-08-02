@@ -31,10 +31,10 @@ const calculateShipping = (price) => {
 // heart like button
 for(let i in hearts){
     hearts[i].addEventListener("click",function(){
-        if(hearts[i].getAttribute('src') == "assets/redHeart.png")
-        hearts[i].setAttribute('src','assets/whiteHeart.png');
+        if(hearts[i].getAttribute('src') == "img/redHeart.png")
+        hearts[i].setAttribute('src','img/whiteHeart.png');
         else
-        hearts[i].setAttribute('src','assets/redHeart.png');
+        hearts[i].setAttribute('src','img/redHeart.png');
     });
 }
 
