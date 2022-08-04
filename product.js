@@ -1,16 +1,17 @@
+//console.dir(Document),
+console.log(document);
 const domElements = {
-    quantity: document.querySelector('.quantity'),
-    price: document.querySelector('.price'),
-    shippingCost: document.querySelector('.shipping-cost'),
-    totalCost: document.querySelector('.total-cost'),
-    buyBtn: document.querySelector('.buy-now'),
-    addToCart: document.querySelector('.add_to_cart'),
-    delete: document.querySelector(".delete"),
-    error: document.querySelector('.error'),
-    heart: document.querySelector('.heart'),
-};
-
-//shipping cost
+    quantity: $(".quantity"),
+    price: $ (".price"),
+    shippingCost: $(".shipping-cost"),
+    totalCost: $(".total-cost"),
+    buyBtn: $(".buy-now"),
+    addToCart: $(".add_to_cart"),
+    delete: $(".delete"),
+    error: $(".error"),
+    heart: $(".heart")
+  };
+  //shipping cost
 
 const calculateShipping = (price) => {
     let shippingCost = 0;
@@ -24,17 +25,16 @@ const calculateShipping = (price) => {
     } else if (price >= 100000) {
         shippingCost = 25000;
     }
-
     return shippingCost;
 }
 
 // heart like button
 for(let i in hearts){
     hearts[i].addEventListener("click",function(){
-        if(hearts[i].getAttribute('src') == "img/redHeart.png")
-        hearts[i].setAttribute('src','img/whiteHeart.png');
+        if(hearts[i].getAttribute('src') == "assets/redHeart.png")
+        hearts[i].setAttribute('src','assets/whiteHeart.png');
         else
-        hearts[i].setAttribute('src','img/redHeart.png');
+        hearts[i].setAttribute('src','assets/redHeart.png');
     });
 }
 
