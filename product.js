@@ -1,16 +1,30 @@
-//console.dir(Document),
-console.log(document);
-const domElements = {
-    quantity: $(".quantity"),
-    price: $ (".price"),
-    shippingCost: $(".shipping-cost"),
-    totalCost: $(".total-cost"),
-    buyBtn: $(".buy-now"),
-    addToCart: $(".add_to_cart"),
-    delete: $(".delete"),
-    error: $(".error"),
-    heart: $(".heart")
-  };
+//la quantité  */
+let qte = document.querySelectorAll('.qte');
+let prix = document.querySelectorAll('.pu');
+for(let i = 0; i < qte.length;i++) {
+    let moins = qte[i].previousElementSibling;
+    let plus = qte[i].nextElementSibling;
+    let pu = prix[i].innerText;
+    moins.addEventListener("click", function (){
+        let val = qte[i].innerText;
+        val--;
+        if(val<0){
+            val=0;
+        }
+        qte[i].innerText = val;
+        let som = val*pu;
+        sousT[i].innerText = som;
+        total.innerText = parseInt(total.innerText,10)- parseInt(pu,10);
+    });
+    plus.addEventListener("click", function (){
+        let valA = qte[i].innerText;
+        valA++;
+        qte[i].innerText = valA;
+        let som = valA*pu;
+        sousT[i].innerText = som;
+        total.innerText = parseInt(total.innerText,10) + parseInt(pu,10) ;
+    });
+}
   //shipping cost
 
 const calculateShipping = (price) => {
